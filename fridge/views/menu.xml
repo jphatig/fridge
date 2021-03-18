@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <!-- Forms -->
+
+  <record model="ir.ui.view" id="view_fridge_menu_form">
+    <field name="name">Food menu</field>
+    <field name="model">fridge.menu</field>
+    <field name="arch" type="xml">
+      <form string="Menu">
+        <div class="oe_title">
+          <label for="name" class="oe_edit_only"/>
+          <h1><field name="name"/></h1>
+        </div>
+        <group col="6">
+          <field name="day" colspan="2"/>
+          <field name="hour" colspan="2"/>
+          <field name="minute" colspan="2"/>
+          <field name="dish_ids" colspan="6"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_fridge_menu_tree">
+    <field name="name">Food menus</field>
+    <field name="model">fridge.menu</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="day"/>
+        <field name="hour"/>
+        <field name="minute"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Actions -->
+
+  <record model="ir.actions.act_window" id="action_fridge_menu_tree">
+    <field name="name">Food Menus</field>
+    <field name="res_model">fridge.menu</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{}</field>
+  </record>
+
+  <!-- Search -->
+
+  <record model="ir.ui.view" id="view_fridge_menu_search">
+    <field name="name">Food menus search</field>
+    <field name="model">fridge.menu</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="hour"/>
+        <field name="minute"/>
+      </search>
+    </field>
+  </record>
+
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <menuitem
+    id="menu_fridge_management_root"
+    name="Fridge Management"
+    sequence="50"/>
+
+    <menuitem
+      id="menu_fridge_menus"
+      name="Menus"
+      parent="fridge.menu_fridge_management_root"
+      sequence="0"
+      action="fridge.action_fridge_menu_tree"/>
+
+    <menuitem
+      id="menu_fridge_dishes"
+      name="Dishes"
+      parent="fridge.menu_fridge_management_root"
+      sequence="5"
+      action="fridge.action_fridge_dish_tree"/>
+
+    <menuitem
+      id="menu_fridge_products"
+      name="Products"
+      parent="fridge.menu_fridge_management_root"
+      sequence="5"
+      action="fridge.action_fridge_product_tree"/>
+
+</odoo>

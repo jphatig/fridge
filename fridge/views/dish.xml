@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <!-- Forms -->
+
+  <record model="ir.ui.view" id="view_fridge_dish_form">
+    <field name="name">Food dish</field>
+    <field name="model">fridge.dish</field>
+    <field name="arch" type="xml">
+      <form string="Dish">
+        <div class="oe_title">
+          <label for="name" class="oe_edit_only"/>
+          <h1><field name="name"/></h1>
+        </div>
+        <group>
+          <field name="recipe_ids">
+            <tree editable="bottom">
+              <field name="dish_id" invisible="1"/>
+              <field name="product_id" context="{'create_edit': 1}"/>
+              <field name="quant"/>
+              <field name="uom"/>
+            </tree>
+          </field>
+          <field name="instructions"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="view_fridge_dish_tree">
+    <field name="name">Food dishes</field>
+    <field name="model">fridge.dish</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Actions -->
+
+  <record model="ir.actions.act_window" id="action_fridge_dish_tree">
+    <field name="name">Food Dishes</field>
+    <field name="res_model">fridge.dish</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{}</field>
+  </record>
+
+  <!-- Search -->
+
+  <record model="ir.ui.view" id="view_fridge_dish_search">
+    <field name="name">Food dishes search</field>
+    <field name="model">fridge.dish</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+      </search>
+    </field>
+  </record>
+
+</odoo>
